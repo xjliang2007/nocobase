@@ -13,7 +13,7 @@ const useOptions = (collectionName: string, { schema, operator, maxDepth, count 
   }
 
   const result = useFilterOptions(collectionName).map((option) => {
-    if ((option.type !== 'belongsTo' && option.type !== 'hasOne') || !option.target) {
+    if (!option.target) {
       return {
         key: option.name,
         value: option.name,
